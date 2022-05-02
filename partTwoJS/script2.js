@@ -1,11 +1,10 @@
 
-let randInt = Math.floor(Math.random() * 10) + 1;
+let randomInt = Math.floor(Math.random() * 10) + 1;
 let usersGuess;
 
-while (randInt != usersGuess) {
+while (randomInt != usersGuess) {
     usersGuess = prompt('Enter a number:...');
-    if(randInt == usersGuess) console.log('Good work buddy!');
-    else console.log('Try again.')
+    (randomInt === usersGuess) ? console.log('Good work buddy!') : console.log('Try again.');
 }
 
-
+console.log('Good work buddy!');
