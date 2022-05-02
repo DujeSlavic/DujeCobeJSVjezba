@@ -112,37 +112,16 @@ console.log(getLongestString(['bla']));
 //Write a JavaScript program that will find the biggest number 
 //that can be divided with 6 of a given array of integers
 
-/*
+let biggestNumberDivisibleBy6 = (array) => {
+    return array.sort((element1, element2) => element2 - element1).find(element => element % 6 === 0);
+}
+
 console.log(biggestNumberDivisibleBy6([]));
 console.log('--------------------------');
 console.log(biggestNumberDivisibleBy6([3]));
 console.log('--------------------------');
 console.log(biggestNumberDivisibleBy6([1,2,3,6,66,12,0]));
 console.log('--------------------------');
-*/
-
-function biggestNumberDivisibleBy6(arry){
-    if(arry.length == 0) return 'Array is empty!'
-    else  return checkForMaxNumber(arry);
-}
-function checkForMaxNumber (arry){
-    var max = null;
-    var maxPosition = null;
- 
-    for (let i = 0; i < arry.length; i++) {
-        if (
-            arry[i] % 6 == 0 &&
-            arry[i] > max
-            ) {
-            max = arry[i];
-            maxPosition = i;
-        }
-    }
-
-    if(maxPosition == null) return 'No number is divisible by six.';
-    else return arry[maxPosition];
-}
-
 //-------------------------------------
 
 //Write a JavaScript program to convert temperatures to and from 
@@ -150,31 +129,14 @@ function checkForMaxNumber (arry){
 //60°C is 140°F
 //45°F is 7.22°C
 
-/*
+let tempConversion = (temperature, scale) => {
+    if(scale === 'C') console.log(`${temperature}\xB0C is ${ Math.round(((9 / 5 * temperature + 32) + Number.EPSILON) *100 ) / 100}\xB0F`);
+    if(scale === 'F') console.log(`${temperature}\xB0F is ${ Math.round(((5 / 9 * (temperature - 32)) + Number.EPSILON) *100 ) / 100}\xB0C`);
+}
+
+
 tempConversion(60,'C');
 tempConversion(45, 'F');
-*/
-
-function tempConversion (temp, scale){
-    var convertedTemp;
-    if (scale == 'C') {
-        convertedTemp = CToF(temp);
-        console.log(`${temp}\xB0C is ${convertedTemp}\xB0F`);
-    }
-    else if (scale == 'F') {
-        convertedTemp = FToC(temp);
-        console.log(`${temp}\xB0F is ${convertedTemp}\xB0C`);
-    }
-    else console.log('Invalide scale!');
-}
-
-function CToF(tempInC){
-    return 9 / 5 * tempInC + 32;
-}
-
-function FToC(tempInF){
-    return 5 / 9 * (tempInF - 32);
-}
 
 
 //----------------------------------------
