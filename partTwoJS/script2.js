@@ -4,7 +4,6 @@ let usersGuess;
 
 while (randomInt != usersGuess) {
     usersGuess = prompt('Enter a number:...');
-    (randomInt === usersGuess) ? console.log('Good work buddy!') : console.log('Try again.');
+    //ostavljeno == da ne padnje na type
+    (randomInt == usersGuess) ? console.log('Good work buddy!') : console.log('Try again.');
 }
-
-console.log('Good work buddy!');
